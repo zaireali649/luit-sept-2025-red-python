@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,8 +24,8 @@ jobs:
 
       - name: Check formatting (no changes allowed)
         run: |
-          ruff format --check .
+          ruff format --check . || (echo "Formatting issues found. Run 'ruff format .' locally to fix." && exit 1)
 
       - name: Lint (fail on any violations)
         run: |
-          ruff check --diff .
+          ruff check --diff . || (echo "Lint issues found. Run 'ruff check --fix .' locally to fix." && exit 1)
