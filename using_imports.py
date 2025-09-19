@@ -20,9 +20,7 @@ numbers = [
 print("Random numbers:", numbers)  # print the list of random numbers
 
 # Plot with matplotlib
-plt.plot(
-    numbers, marker="o", linestyle="-", color="purple"
-)  # line plot with circular markers
+plt.plot(numbers, marker="o", linestyle="-", color='purple')  # line plot with circular markers
 plt.title("Random Numbers Plot")  # title of the plot
 plt.xlabel("Index")  # x-axis label
 plt.ylabel("Value")  # y-axis label
